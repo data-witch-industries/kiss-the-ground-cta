@@ -1,12 +1,12 @@
-# Style Guidelines for CSS-in-JS
+# Soil Policy Action React App
 
 ## What is this?
 
-This is an example project for you to reference when setting up a new web app using React and/or CSS-in-JS. Alternatively, you can follow the [installation](#installation) steps below on your own project.
+A react web app to email your government representatives and encourage them to learn about the importance of improving soil health through regenerative agriculture.
 
 ## Why do I need this?
 
-This is to help engineers and designers setup style related tools, and follow a frontend convention for the project. This makes the project more maintainable in the future.
+This Reame is to help engineers and designers setup this project, and follow a frontend convention. This makes the project more maintainable in the future.
 
 ## Tech & Ideologies Used
 
@@ -23,7 +23,6 @@ This is to help engineers and designers setup style related tools, and follow a 
 To use this project as a starting point for your React web app, simply clone this repo and run:
 
 - `npm install`
-
 - `npm start`
 
 ## <a name="installation"></a>Installation
@@ -283,10 +282,10 @@ We're going to create a `Button` atom that has custom styles using CSS-in-JS.
   const BaseButton = styled.button`
     padding: 0.6rem 2rem;
     font-size: 1.2rem;
-    background-color: ${props => props.theme.colors.brandPrimary};
-    border-color: ${props => props.theme.colors.brandPrimary};
+    background-color: ${(props) => props.theme.colors.brandPrimary};
+    border-color: ${(props) => props.theme.colors.brandPrimary};
     border-radius: 0.25rem;
-    color: ${props => props.theme.colors.white};
+    color: ${(props) => props.theme.colors.white};
     transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
       border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
     cursor: pointer;
@@ -341,10 +340,10 @@ export function Button(props) {
   const BaseButton = styled.button`
     padding: 0.6rem 2rem;
     font-size: 1.2rem;
-    background-color: ${props => props.theme.colors.brandPrimary};
-    border-color: ${props => props.theme.colors.brandPrimary};
+    background-color: ${(props) => props.theme.colors.brandPrimary};
+    border-color: ${(props) => props.theme.colors.brandPrimary};
     border-radius: 0.25rem;
-    color: ${props => props.theme.colors.white};
+    color: ${(props) => props.theme.colors.white};
     transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
       border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
     cursor: pointer;
@@ -461,7 +460,7 @@ You can now use `Button` and `EmailSignup` directly on any new `page` you create
   import { EmailSignup } from '../molecules/email-signup'
 
   const SignUpContainer = styled.div`
-    background: ${props => props.theme.colors.darkGray};
+    background: ${(props) => props.theme.colors.darkGrey};
     padding: 7% 0;
   `
 
@@ -470,12 +469,12 @@ You can now use `Button` and `EmailSignup` directly on any new `page` you create
       <SignUpContainer>
         <Container>
           <Flex flexWrap="wrap">
-            <Box width={[1, 1, 1/2, 3 / 5]} p={3}>
+            <Box width={[1, 1, 1 / 2, 3 / 5]} p={3}>
               <H2 whiteText>{props.headline}</H2>
               <Paragraph whiteText>{props.cta_copy}</Paragraph>
             </Box>
 
-            <Box width={[1, 1, 1/2, 2 / 5]} p={3}>
+            <Box width={[1, 1, 1 / 2, 2 / 5]} p={3}>
               <EmailSignup
                 placeholder={props.placeholder}
                 title={props.title}
